@@ -4,8 +4,8 @@ author: "Brad Duthie"
 subtitle: "HTML Version: https://stirlingcodingclub.github.io/getting_started/notes.html"
 date: "10 OCT 2019"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 link-citations: yes
 linkcolor: blue
 bibliography: refs.bib
@@ -218,47 +218,146 @@ There are a few things to note in the Figure above. First, the script [sample_co
 
 You can read the code from the Rscript into the console in multiple ways. The easiest is to simply click with your mouse on whatever line you want to run, then click the 'Run' button. Try clicking anywhere on line 1, for example, so that the cursor is blinking somewhere on the line. Then click 'Run'; you should see `> 2 + 5` appear in the R console, followed by the correct answer `r 2+5`. After you have done this, R moves the cursor to the next line in anticipation of you wanting to run line 2. If you want to run line 2, then you could just hit 'Run' again, and repeat for line 3, 4, etc. Give this a try.
 
-If you do not want to go through all of the code line by line, you could instead highlight a block of code, as I did above for lines 1-8. If you highlight these lines, then click 'Run', the R console will run every line one after another, producing the output shown in the console of the Figure above. Try this as well to get a feel for running multiple lines of code at once. You now know the basics of getting started with coding in R. Next, we will move onto reading data into R for analysis, and doing a very simple correlation analysis on the classic [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows) [@Bumpus1898; @Johnston1972].
-
-
+If you do not want to go through all of the code line by line, you could instead highlight a block of code, as I did above for lines 1-8. If you highlight these lines, then click 'Run', the R console will run every line one after another, producing the output shown in the console of the Figure above. Try this as well to get a feel for running multiple lines of code at once. You now know the basics of getting started with coding in R. Next, we will move onto reading data into R for analysis, and doing a very simple correlation analysis on the classic [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows) [@Bumpus1898; @Johnston1972]. Very briefly, the Bumpus data includes characteristics and morphological measurements from sparrows in North America following a severe storm (the specifics are not important for our purposes).
 
 Reading in data
 ================================================================================
 
-Now we need to read in the data collected from out in the field. Make sure that the file is in the same place as your current working directory (`getwd()`). I have named my file 'MyTransect.csv', but yours might be different.
+Now we need to read in the Bumpus data. This is actually a challenging part because the data needs to be in a correct format and location to be read into R successfully. The format is best read in as a CSV file, though other formats are also possible (TXT can work, or XLSX if you download and load the `openxlsx` R package and use the `read.xlsx` function). For now, I will use a CSV file with the [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows). Reading CSV files into R can be challenging at first, and I encourage you to first read in the example data set, then try reading in your own data sets into R. You can read your own dat sets into R by saving them as CSV files in Excel; as a general rule, it is good to avoid spaces in these files (replacing them, e.g., with an underscore '_'). Also make sure that all rows and columns are filled in; any empty values can be replaced with an `NA`, which R reads as unavailable data. See the [Bumpus CSV file](https://github.com/StirlingCodingClub/getting_started/blob/master/Bumpus_data.csv) online to get an idea of what a data file looks like.
+
+Two common errors arise at this point, which can be sources of frustration for getting started. First, the data might not be organised correctly for reading into R. Note that rows and columns should start in row '1' and column 'A' of Excel (i.e., don't leave empty rows and columns), and additional cells should not be used outside of rows and columns (if, e.g., you have a value in cell M4, when the last column in your table is K, then R will intepret this as column L being full of empty values). You should be fine if R includes some number of completely filled in rows and columns, with nothing filled in outside. If you want to, you can download the [Bumpus CSV file](https://www.dropbox.com/s/8ytv36kbahhcpbs/Bumpus_data.csv?dl=0) from Dropbox and open it up in Excel for an example of what a good CSV file looks like. Note that there are no empty cells inside the table, and no values outside the table. This should therefore be read easily into R.
+
+Second, you need to make sure that the file you are trying to read into R is located in the same place as your current working directory. You can see what your current working directory (i.e., 'folder') is using the command below.
+
+```{r, echo = TRUE}
+getwd(); # No argument is needed here for the function
+```
+
+The above function returns the current working directory. If this is the same as the CSV file that you want to read into R, then all is well. But if this is not the working directory where your CSV file is located, then you need to find it. You could do this from the R console, but the easiest way is to go to the toolbar and go to 'Session > Set Working Directory > Choose Directory...' and find the location where your CSV file is saved. The easiest way to do this is to save your data in the same place that you have saved your R script. If you do this, then you can simply go to 'Session > Set Working Directory > To Source File Location', and R will set the directory to the same file as your current R script. From there you can read in your CSV file with the `read.csv` function in R. Note that the first row of the file 'Bumpus_data.csv' is a header, which gives the column names, so we should specify the argument 'header = TRUE'.
 
 ```{r, echo = TRUE}
 dat <- read.csv(file = "Bumpus_data.csv", header = TRUE);
 ```
 
-Note above that I have used the 'read.csv' function to read the CSV file into the variable `dat` in R. To make sure that everything looks correct, you can type `dat` in the console to see all of the data print out. I will use the 'head' function below to just print off the first six rows.
+If you get an error message, double-check that the file name and the working directory are correct (if there is an error, this is the problem most of the time). Note that the **everything in R is case sensitive**. That means that if a letter is capitalised in the file name, but you do not capitalise it in the `file` argument above, then R will not recognise it. A lot of errors are caused by capitalisation issues in R.
+
+Once you have succeeded in reading in a file without getting an error message, to make sure that everything looks correct, you can type `dat` in the console to see all of the data print out. I will use the 'head' function below to just print off the first six rows.
 
 ```{r, echo = TRUE}
 head(dat);
 ```
 
-If the data appear to be read into R correctly, then you can move on to the analysis below. The most common error at this point is trying to read a CSV file into R that does not exist, either because the file is misspelled or the directory is incorrect. **Note that everything in R is case sensitive**, meaning that if a letter is capitalised in a file name or a variable, then it needs to be capitalised when you write it out.
+If the data appear to be read into R correctly, then you can move on to working with the data and performing analyses in R. Note that `dat` is a big table that is now read into R. While we do not necessarily see the entire table at once, as we would in Excel, we can pull out any of the information in that we want. For example, if we want to see how many rows and columns are in `dat`, we can use the following functions.
 
-Now that we have the data read in and assigned to the variable `dat`, we can summarise it in some different ways. Try typing the functions below into the R console to see what happens. **Note that your data will be different than what is in this document. This means that your plots and analyses should look different, even though the code will be the same.**
-
-```{r, eval = FALSE, echo = TRUE}
-names(dat);       # Get the column names in dat
-str(dat);         # Compactly display the structure of dat
-attributes(dat);  # Get the attributes of dat (e.g., col and row names)
-dim(dat);         # How many rows and columns in dat?
-summary(dat);     # Summary statistics of dat (e.g., min, max, mean)
+```{r, echo = TRUE}
+nrow(dat);
+ncol(dat);
 ```
 
-Note that if you are not sure what a function does, you can use the 'help' function in the console to find out. The 'help' function will bring up the function's documentation. For example, say you were not sure what the function 'attributes' does, or what arguments it takes.
+We could also just use the function `dim` to get the dimensions of `dat` (note that this would work for an array of any number of dimensions).
 
-```{r, eval = FALSE, echo = TRUE}
-help(attributes); # See 'attributes' documentation: ?attributes also works
+```{r, echo = TRUE}
+dim(dat);
 ```
 
-We can also summarise the data visually using the generic 'plot' function. R will recognise the structure of the data and create a box and whisker plot that summarises the distances for each of our three transects.
+So we know that our table `dat`, which contains the Bumpus data, includes `r dim(dat)[1]` rows and `r dim(dat)[2]` columns. Having read this table into R successfully, we can now perform any number of statistical analyses on the contents. The different ways to analyse theses data are beyond the scope of these notes, but there are a few useful things to know. First, the row and columns in `dat` can be indext using square brackets. If, for example, we wanted to just look at the value of the fourth row and sixth column, we could type the following.
+
+```{r, echo = TRUE}
+dat[4, 6]; # First row, second column
+```
+
+The first position within the brackets is the row (`4`), and the second position is the column (`6`). Note that R is not restricted to two dimensions; it is possible to have three or more dimensions of an array, in which case we might refer to an array element as `dat[x_dim, y_dim, z_dim]` for a `dat` of three dimensions. Note that we can also store any particular value in `dat` as a variable, if we want. We could, for example store the above as `dat_point_1` using the code below.
+
+```{r, echo = TRUE}
+dat_point_1 <- dat[4, 6];
+```
+
+We could then use `dat_point_1` in place of dat[, 6]. We can also define entire rows or columns. For example, if we wanted to return all of the values of row 4, then we could leaven the second index blank, as below.
+
+```{r, echo = TRUE}
+dat[4, ]; # Note the empty space where a column was previously
+```
+
+In the Bumpus data set, this gives us all the information of measurements for sparrow number 4. We can do the same for columns. Note that column 5 holds the mass of each sparrow (in grams). We could look at all of the sparrow masses using the code below.
+
+```{r, echo = TRUE}
+dat[, 5]; # Note the empty space is now where a row used to be.
+```
+
+Note that this now returns the masses of all `r dim(dat)[1]` sparrows. Since our table has headers, and the header for column 5 is `r colnames(dat)[5]`, we could also use the code below.
+
+```{r, echo = TRUE}
+dat$wgt; # R sees the column header and returns column 5; same as above
+```
+
+Even better, we can plot a histogram of sparrow weights using the built-in function `hist` in R. 
+
+```{r, echo = TRUE}
+hist(x = dat$wgt);
+```
+
+This looks a bit rubbish; the main title is unnecessary, and the axis labels are not terribly informative. We can tweak the axis labels and colours using the following arguments.
+
+```{r, echo = TRUE}
+hist(x = dat$wgt, main = "", xlab = "Sparrow weight (g)", ylab = "Frequency",
+     cex.lab = 1.25, cex.axis = 1.25, col = "grey");
+```
+
+Some basic analyses
+================================================================================
+
+Since the R programming language is developed primarily for scientific analysis and statistical computing, there are several built-in functions for doing simple analyses. More complex analyses that are not possible with in-build tfunctions can be performed by downloading R packages. If you have heard of an analysis, it is probably available within an R package. For now, let us just do some basic statistical analyses. For example, let us say that we want to summarise the data on sparrow body mass. We can do this with the `summary` function in R.
+
+```{r, echo = TRUE}
+summary(dat$wgt);
+```
 
 
-We can also make a histogram of the distances that we collected. This is a good way to check for outliers. If you end up with a distance that is much too far to be realistic, then check to make sure that you did not type it into Excel incorrectly.
+The `summary` function returns six numbers, including the minimum value, first quartile, median, mean, third quartile, and maximum value of numbers in the data, in this case a column of sparrow body masses. Now say that we want to see if sparrow body mass is correlated with sparrow body length (`dat$totlen` in our data frame). We could first look at a scatter plot of body mass versus length.
+
+```{r, echo = TRUE}
+plot(x = dat$wgt, y = dat$totlen, xlab = "Sparrow body mass (g)", 
+     ylab = "Sparrow body length (mm)", cex.lab = 1.25, cex.axis = 1.25,
+     pch = 20); # Note: cex.lab, cex.axis, and pch are purely cosmetic
+```
+
+It clearly looks like there is a correlation between the two variables of interest. We can find out what this correlation is below.
+
+```{r, echo = TRUE}
+cor(dat$wgt, dat$totlen);
+```
+
+Hence, the correlation between sparrow body mass and sparrow total body length is `r cor(dat$wgt, dat$totlen)`. We can even test to see if this correlation is significant using the `cor.test` function.
+
+```{r, echo = TRUE}
+cor.test(dat$wgt, dat$totlen);
+```
+
+As you can see above, this returns the correlation, along with a t-statistic, degrees of freedom, p-value, and confidence interval for the Pearson product-moment correlation between the two variables of interest. If we wanted to instead run a simple linear regression of body total length against body mass, we could use the `lm` function as below.
+
+```{r, echo = TRUE}
+lm(dat$totlen ~ dat$wgt);
+```
+
+Note that the above function returns the intercept and slope, but not any results from statistical null hypothesis tests. To do this, we need to wrap `lm` in the function `summary`, as below.
+
+```{r, echo = TRUE}
+summary( lm(dat$totlen ~ dat$wgt) );
+```
+
+Now we get a bit more information, including significance tests for our intercept `(Intercept)` and slope `dat$wgt`. The linear model function (`lm`), and the generalised linear model function (`glm`) are very flexible, and can be used for a variety of purposes that I will not elaborate on here, except for one more example. Let us look at the categorical variable of sparrow sex, and test whether or not bird mass difference between sexes. To do this, we could use a simple t-test with the `t.test` function below.
+
+```{r, echo = TRUE}
+t.test(dat$wgt ~ dat$sex);
+```
+
+Since a t-test is mathematically identical to an linear model with two categorical response variables, we could also use the `lm` function to do the same null hypothesis test.
+
+```{r, echo = TRUE}
+summary( lm(dat$wgt ~ dat$sex) );
+```
+
+The point here is not to demonstrate all of the different statistics that can be performed within R. Because R is a programming language, the possibilities are limitless; in the unlikely chance that no one has written code for a particular statistical analysis that you need to perform, you could write your own code to do the analysis yourself.
 
 
 
