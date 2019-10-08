@@ -8,7 +8,7 @@ output:
   pdf_document: default
 link-citations: yes
 linkcolor: blue
-bibliography: code.bib
+bibliography: refs.bib
 ---
 
 The purpose of this introduction
@@ -210,7 +210,16 @@ object_1 <- list(vector_1, 54, "string of words");
 object_1;
 ```
 
-You can find and download the code above in the file [sample_code.R](https://github.com/StirlingCodingClub/getting_started/blob/master/sample_code.R) on GitHub.
+You can find and download the code above in the file [sample_code.R](https://github.com/StirlingCodingClub/getting_started/blob/master/sample_code.R) on GitHub. If you wanted to redo all of the calculations in this R script, you could open it and run each line one by one, or as a group. In the figure below, I have read [sample_code.R](https://github.com/StirlingCodingClub/getting_started/blob/master/sample_code.R) into R by first saving it to my computer, then from the toolbar selecting 'File > Open File...' and opening it from the saved location.
+
+![](figures/Rscript.png)
+
+There are a few things to note in the Figure above. First, the script [sample_code.R](https://github.com/StirlingCodingClub/getting_started/blob/master/sample_code.R) now sits above the console; the position of the script might be different depending on your pane settings, but you should be able to see it appear somewhere after opening the file. Second, note how different parts of the text in the R script are coloured differently; this makes reading the text a bit easier. The variables, assignments, arguments, and functions, all appear in white. Numbers are shown in pink, strings of words are in green, and comments are in light blue (your colours might differ, but you should see some distinction among different types of text). Third, note the 'Run' button in the upper right corner above the script. This allows you to run the commands in the R script lines directly into the R console so that you do not have to retype them directly.
+
+You can read the code from the Rscript into the console in multiple ways. The easiest is to simply click with your mouse on whatever line you want to run, then click the 'Run' button. Try clicking anywhere on line 1, for example, so that the cursor is blinking somewhere on the line. Then click 'Run'; you should see `> 2 + 5` appear in the R console, followed by the correct answer `r 2+5`. After you have done this, R moves the cursor to the next line in anticipation of you wanting to run line 2. If you want to run line 2, then you could just hit 'Run' again, and repeat for line 3, 4, etc. Give this a try.
+
+If you do not want to go through all of the code line by line, you could instead highlight a block of code, as I did above for lines 1-8. If you highlight these lines, then click 'Run', the R console will run every line one after another, producing the output shown in the console of the Figure above. Try this as well to get a feel for running multiple lines of code at once. You now know the basics of getting started with coding in R. Next, we will move onto reading data into R for analysis, and doing a very simple correlation analysis on the classic [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows) [@Bumpus1898; @Johnston1972].
+
 
 
 Reading in data
