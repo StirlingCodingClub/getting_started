@@ -184,7 +184,33 @@ Play around a bit with R before moving on, and try to get confortable using the 
 Using R script to save and run code
 ================================================================================
 
-Up until now, we have focused on running code directly into the console. This works, but if you want to run multiple lines of code, or just save your code for later use, then you will need more than the console. R scripts are [plain text](https://en.wikipedia.org/wiki/Plain_text) files with a '.R' extension, which can be used to save R code. 
+Up until now, we have focused on running code directly into the console. This works, but if you want to run multiple lines of code, or just save your code for later use, then you will need more than the console. R scripts are [plain text](https://en.wikipedia.org/wiki/Plain_text) files with a '.R' extension, which can be used to save R code. The R code itself is no different than what we have already run into the console. For example, we could save an R file with all of the code that we have read into the console up to this point; it would look like the below.
+
+```{r, echo = TRUE, eval = FALSE}
+2 + 5; 
+4 * 4;  
+12 - 3; 
+5^2;
+sqrt(256);
+log(x = 256, base = 10);
+log(x = 256);
+log(256);
+log( log(256) );
+help(topic = log);
+?log;
+var_1 <- 10;
+var_1 * 5; # Multiplying the variable by 5
+vector_1 <- c(5, 1, 3, 5, 7, 11); # Six numbers
+vector_1;      # Prints out the vector
+vector_1 + 10; # Prints the vector elements plus ten
+vector_1 * 2;  # Prints the vector elements times two
+vector_1 <- c(vector_1, 31, 100); # Appends the vector
+vector_1;
+object_1 <- list(vector_1, 54, "string of words");
+object_1;
+```
+
+You can find and download the code above in the file [sample_code.R](https://github.com/StirlingCodingClub/getting_started/blob/master/sample_code.R) on GitHub.
 
 
 Reading in data
