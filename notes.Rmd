@@ -378,7 +378,7 @@ Appendix: R script file {#appendix}
 # Make sure that R is set to the same working directory as Bumpus_data.csv
 # Also make sure that the filenames match exact (including capitalisation)
 dat <- read.csv(file = "Bumpus_data.csv", header = TRUE);
-# So now the whole data table is saved as the variable 'dat'
+# Now the whole data table is saved as the variable 'dat'
 # You can save it as something different if you want, but avoid spaces
 
 # Let's take a look at the first six rows of the data
@@ -424,7 +424,6 @@ summary(object = our_lm);
 our_aov <- aov(dat$wgt ~ dat$sex)
 summary(our_aov);
 ```
-
 
 References
 ================================================================================
