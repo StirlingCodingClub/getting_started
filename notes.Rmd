@@ -1,7 +1,7 @@
 ---
 title: "Introduction to coding"
 author: "Brad Duthie"
-subtitle: "HTML Version: https://stirlingcodingclub.github.io/getting_started/notes.html"
+subtitle: "PDF Version: https://stirlingcodingclub.github.io/getting_started/notes.pdf"
 date: "10 OCT 2019"
 output:
   html_document: default
