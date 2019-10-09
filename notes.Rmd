@@ -4,8 +4,8 @@ author: "Brad Duthie"
 subtitle: "HTML Version: https://stirlingcodingclub.github.io/getting_started/notes.html"
 date: "10 OCT 2019"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 link-citations: yes
 linkcolor: blue
 bibliography: refs.bib
@@ -14,12 +14,12 @@ bibliography: refs.bib
 The purpose of this introduction
 ================================================================================
 
-The purpose here is to get readers past the initial learning curve of coding as quickly as possible. If you want to start coding for yourself, particuarly in R for data analysis, but are not sure where to start, then read on. By the end of these notes, you should be able to navigate through the basic graphical user interface of Rstudio and write some basic lines of code. The goal is not to develop proficiency in coding or R yet, but to help you get to the point at which it is possible to write and run code, make coding mistakes, and learn from other researcher's code.
+The purpose here is to get readers past the initial learning curve of coding as quickly as possible. If you want to start coding for yourself, particuarly in R for data analysis, but are not sure how, then read on. By the end of these notes, you should be able to navigate through the basic graphical user interface of Rstudio and write some basic lines of code. The goal is not to develop proficiency in coding or R yet, but to help you get to the point at which it is possible to write and run code, make coding mistakes, and learn from other researcher's code.
 
 Why use the R programming language?
 ================================================================================
 
-The computer programming language R is a powerful and very widely-used tool among biologists for analysing data. You can use it to analyse and plot data, run computer simulations, or even write slides, papers, or books. The R programming language is completely free and open source, as is the popular [Rstudio](https://www.rstudio.com/) software for using it. It specialises in statistical computing, which is part of the reason for its popularity among scientists. 
+The computer programming language R is a powerful and very widely-used tool among scientists for analysing data. You can use it to analyse and plot data, run computer simulations, or even write slides, papers, or books. The R programming language is completely free and open source, as is the popular [Rstudio](https://www.rstudio.com/) software for using it. It specialises in statistical computing, which is part of the reason for its popularity among scientists. 
 
 Another reason for its popularity is its versatility, and the ease with which new techniques can be shared. Imagine that you develop a new method for analysing data. If you want other researchers to be able to use your method in their research, then you could write your own software from scratch for them to install and use. But doing this would be very time consuming, and a lot of that time would likely be spent writing the graphical user interface and making sure that your program worked across platforms (e.g., on Windows and Mac). Worse, once written, there would be no easy way to make your program work with other statistical software should you need to integrate different analyses or visualisation tools (e.g., plotting data). To avoid all of this, you could instead just present your new method for data analysis and let other researchers write their own code for implementing it. But not all researchers will have the time or expertise to do this.
 
@@ -30,19 +30,19 @@ Instead, R allows researchers to write new tools for data analysis using simple 
 Getting started in R, and the basics
 ================================================================================
 
-**Installation.** The first thing to do is [download Rstudio](https://www.rstudio.com/) if you have not already. Note that R and Rstudio are not the same thing; R is a language for scientific computing, and can be used outside of Rstudio. Rstudio is a very useful tool for coding in the R language. As a loose analogy, R is like a written language (e.g., English, Spanish) that can be used to write inside Rstudio (e.g., a word processor such as Microsoft Word, LibreOffice). But by downloading Rstudio, you will also download the R programming language. Look carefully at the version of Rstudio that you download; [different installers](https://rstudio.com/products/rstudio/download/#download) exist for Windows, Mac, and Linux. The most recent version of Rstudio requires a [64-bit](https://en.wikipedia.org/wiki/64-bit_computing) operating system. Unless your computer is quite old (over seven years), you most likely have a 64-bit operating system rather than a [32-bit](https://en.wikipedia.org/wiki/32-bit) operating system, but if you are uncertain, then it is best to check.
+**Installation.** The first thing to do is [download Rstudio](https://www.rstudio.com/) if you have not already. Note that R and Rstudio are not the same thing; R is a language for scientific computing, and can be used outside of Rstudio. Rstudio is a very useful tool for coding in the R language. As a very loose analogy, R is like a written language (e.g., English, Spanish) that can be used to write inside Rstudio (e.g., a word processor such as Microsoft Word, LibreOffice). But by downloading Rstudio, you will also download the R programming language. Look carefully at the version of Rstudio that you download; [different installers](https://rstudio.com/products/rstudio/download/#download) exist for Windows, Mac, and Linux. The most recent version of Rstudio requires a [64-bit](https://en.wikipedia.org/wiki/64-bit_computing) operating system. Unless your computer is quite old (say, over seven years), you most likely have a 64-bit operating system rather than a [32-bit](https://en.wikipedia.org/wiki/32-bit) operating system, but if you are uncertain, then it is best to check.
 
 **Running Rstudio.** When you first run Rstudio, you will see several windows open. It will look something like the below, except probably with a standard black on white theme (if you want, you can change this by selecting from the toolbar 'Tools > Global Options...', then selecting the 'Appearance' tab on the left).
 
 ![](figures/Rstudio.png)
 
-This might look a bit intimidating at first. Unlike Microsoft Excel, SigmaPlot, or JMP, there is no spreadsheet that opens up for you. You interact with R mostly by typing lines of commands rather than using a mouse to point and click on different options. Eventually, this is liberating, but at first it will probably feel overwhelming. First, let us look at all of the four panes in the Figure above. Your panes might be organised a bit differently, but the important ones to start out with are the 'Source' and the 'Console'. These are shown in the right hand panes in the above Figure.
+This might look a bit intimidating at first. Unlike Microsoft Excel, SigmaPlot, or JMP, there is no spreadsheet that opens up for you. You interact with R mostly by typing lines of commands rather than using a mouse to point and click on different options. Eventually, this will feel liberating, but at first it will probably feel overwhelming. First, let us look at all of the four panes in the Figure above. Your panes might be organised a bit differently, but the important ones to start out with are the 'Source' and the 'Console'. These are shown in the right hand panes in the above Figure.
 
-To make sure that the Source pane is available to you, open an new R script by selecting from the toolbar 'File > New File > Rscript' (shortcut: Shift+Ctrl+N). You should see a new Rscript open up that looks something like the below (the colour scheme might differ).
+To make sure that the Source pane is available to you, open an new R script by selecting from the toolbar 'File > New File > Rscript' (shortcut: Shift+Ctrl+N). You should see a new Rscript open up that looks something like the below (again, the colour scheme might differ).
 
 ![](figures/blank_Rscript.png)
 
-Think of this Source file like a Word document that you have just opened up -- completely blank and ready for typing new lines of command to read in data and run analyses. We will come back to this Source file, but for now just know that the Source file stores commands that we want R to intepret and use. The Source file does this by sending commands to the R console, which we will look at now.
+Think of this Source file like a Word document that you have just opened up -- completely blank and ready for typing new lines of commands to read in data and run analyses. We will come back to this Source file, but for now just know that the Source file stores commands that we want R to intepret and use. The Source file does this by sending commands to the R console, which we will look at now.
 
 The R console should be located somewhere in Rstudio (I like to keep it directly underneath my R Source files). You can identify it by finding the standard R information printed off, which should look something like the below.
 
@@ -68,7 +68,7 @@ Type 'q()' to quit R.
 > 
 ```
 
-The console is where all of the code is run. To get started, you can actually ignore everything else and just focus on this pane. If you click to the right of the greater than sign `>`, you can start using R right in the console. To get a feel for running code in the console, you can use the R console as a standard calculator. Try typing something like the below to the right of the `>`, then hit 'Return' on your keyboard (note, all of my semi-colons are optional).
+The console is where all of the code is run. To get started, you can actually ignore everything else and just focus on this pane. If you click to the right of the greater than sign `>` at the bottom, then you can start using R right in the console. To get a feel for running code in the console, you can use the R console as a standard calculator. Try typing something like the below to the right of the `>`, then hit 'Return' on your keyboard (note, all of my semi-colons are optional -- you do not actually need to put them at the end of each line).
 
 ```{r, echo = TRUE}
 2 + 5;  
@@ -82,15 +82,15 @@ Now try some other common mathematical operations, one line at a time.
 5^2;
 ```
 
-Notice that R does the calculation of each of the above mathematical operations and returns the correct value on the line below. If you are familiar with using Microsoft Excel, this is the equivalent to typing `= 2 + 5`, `= 4 * 4`, etc., into a cell of an Excel spreadsheet. You might also be familiar with spreadsheet functions as well, such as the square root function, which you could use in Excel by typing, e.g., `= sqrt(25)` into a spreadsheet cell. This works in the R console too; the functions actually have the same syntax, so you could type the below into the console and hit 'Enter'.
+Notice that R does the calculation of each of the above mathematical operations and returns the correct value on the line below. If you are familiar with using Microsoft Excel, this is the equivalent to typing [`= 2 + 5`], or [`= 4 * 4`], etc., into a cell of an Excel spreadsheet. You might also be familiar with spreadsheet functions as well, such as the square root function, which you could use in Excel by typing, e.g., [`= sqrt(25)`] into a spreadsheet cell. This works in the R console too; the functions actually have the same syntax, so you could type the below into the console and hit 'Enter'.
 
 ```{r, echo = TRUE}
 sqrt(256);
 ```
 
-The console returns the correct answer `r sqrt(256)`. Similar functions exist for logarithms (`log`) and trigonmetric functions (e.g., `sin`, `cos`), as they do in Microsoft Excel. But this is just the beginning in R. Functions can be used to do any number of tasks. Some of these functions are built into the base R language, others are written by researchers and distributed in [R packages](https://cran.r-project.org/web/packages/available_packages_by_name.html), but you can also learn to write your own R functions to do any number of customised tasks. You will need to use functions in nearly every line of code you write (technically, even the `+`, `-`, etc., are also functions), so it is good to know the basics of how to use them. 
+The console returns the correct answer `r sqrt(256)`. Similar functions exist for logarithms (`log`) and trigonmetric functions (e.g., `sin`, `cos`), as they do in Microsoft Excel. But this is just the beginning in R. Functions can be used to do any number of tasks. Some of these functions are built into the base R language; others are written by researchers and distributed in [R packages](https://cran.r-project.org/web/packages/available_packages_by_name.html), but you can also learn to write your own R functions to do any number of customised tasks. You will need to use functions in nearly every line of code you write (technically, even the `+`, `-`, etc., are also functions), so it is good to know the basics of how to use them. 
 
-Most functions are called with open and closed parentheses, as in the `sqrt(256)` above. The `sqrt` is the function, while the `256` is a function argument. An argument is a specific input to a function, and functions can take any number of arguments. For the `sqrt` function, only one argument is needed, but many arguments will have more than one argument. For example, if we want to take the logarithm of some number using the `log` function, we might need to specify the base. In this case, we clarify the number for which we want to compute the log `x` and the logarithm base `base`. Let us say that we want to compute the logarithm of 256 in base 10.
+Most functions are called with open and closed parentheses, as in the `sqrt(256)` above. The `sqrt` is the function, while the `256` is a function argument. An argument is a specific input to a function, and functions can take any number of arguments. For the `sqrt` function, only one argument is needed, but many arguments will have more than one argument. For example, if we want to take the logarithm of some number using the `log` function, we might need to specify the base. In this case, we clarify the number for which we want to compute the log (`x`) and the logarithm base (`base`). Let us say that we want to compute the logarithm of 256 in base 10.
 
 ```{r, echo = TRUE}
 log(x = 256, base = 10);
@@ -292,7 +292,7 @@ dat$wgt; # R sees the column header and returns column 5; same as above
 
 Even better, we can plot a histogram of sparrow weights using the built-in function `hist` in R. 
 
-```{r, echo = TRUE}
+```{r, echo = TRUE, fig.height = 4.3}
 hist(x = dat$wgt);
 ```
 
@@ -306,12 +306,11 @@ hist(x = dat$wgt, main = "", xlab = "Sparrow weight (g)", ylab = "Frequency",
 Some basic analyses
 ================================================================================
 
-Since the R programming language is developed primarily for scientific analysis and statistical computing, there are several built-in functions for doing simple analyses. More complex analyses that are not possible with in-build tfunctions can be performed by downloading R packages. If you have heard of an analysis, it is probably available within an R package. For now, let us just do some basic statistical analyses. For example, let us say that we want to summarise the data on sparrow body mass. We can do this with the `summary` function in R.
+Since the R programming language is developed primarily for scientific analysis and statistical computing, there are several built-in functions for doing simple analyses. More complex analyses that are not possible with built-in functions can be performed by downloading R packages (this can be done from the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) using the funciton `install.packages`, or by looking at the packages tab in Rstudio). If you have heard of an analysis, then it is probably available within an R package. For now, let us just do some basic statistical analyses. For example, let us say that we want to summarise the data on sparrow body mass. We can do this with the `summary` function in R.
 
 ```{r, echo = TRUE}
 summary(dat$wgt);
 ```
-
 
 The `summary` function returns six numbers, including the minimum value, first quartile, median, mean, third quartile, and maximum value of numbers in the data, in this case a column of sparrow body masses. Now say that we want to see if sparrow body mass is correlated with sparrow body length (`dat$totlen` in our data frame). We could first look at a scatter plot of body mass versus length.
 
@@ -339,36 +338,93 @@ As you can see above, this returns the correlation, along with a t-statistic, de
 lm(dat$totlen ~ dat$wgt);
 ```
 
-Note that the above function returns the intercept and slope, but not any results from statistical null hypothesis tests. To do this, we need to wrap `lm` in the function `summary`, as below.
+Note that the above function returns the intercept and slope, but not any results from statistical null hypothesis tests. To do this, we need to wrap `lm` in the function `summary`, as below (the R function `summary` can tell the difference between a vector of numbers and a model, and handles each differently).
 
 ```{r, echo = TRUE}
 summary( lm(dat$totlen ~ dat$wgt) );
 ```
 
-Now we get a bit more information, including significance tests for our intercept `(Intercept)` and slope `dat$wgt`. The linear model function (`lm`), and the generalised linear model function (`glm`) are very flexible, and can be used for a variety of purposes that I will not elaborate on here, except for one more example. Let us look at the categorical variable of sparrow sex, and test whether or not bird mass difference between sexes. To do this, we could use a simple t-test with the `t.test` function below.
+Now we get a bit more information, including significance tests for our intercept `(Intercept)` and slope `dat$wgt`. The linear model function (`lm`), and the generalised linear model function (`glm`) are very flexible, and can be used for a variety of purposes that I will not elaborate on here, except for one more example. Let us look at the categorical variable of sparrow sex, and test whether or not bird mass difference between sexes. To do this, we could use a simple t-test with the `t.test` function below. For illustrative purposes, I have set the argument `var.equal` equal to `TRUE` to assume equal variances (had I not done this, the default would have been `var.equal = FALSE`).
 
 ```{r, echo = TRUE}
-t.test(dat$wgt ~ dat$sex);
+t.test(dat$wgt ~ dat$sex, var.equal = TRUE);
 ```
 
-Since a t-test is mathematically identical to an linear model with two categorical response variables, we could also use the `lm` function to do the same null hypothesis test.
+Since a t-test is equivalent to a linear model with two categorical response variables, we could also use the `lm` function to do the same null hypothesis test.
 
 ```{r, echo = TRUE}
 summary( lm(dat$wgt ~ dat$sex) );
 ```
 
-The point here is not to demonstrate all of the different statistics that can be performed within R. Because R is a programming language, the possibilities are limitless; in the unlikely chance that no one has written code for a particular statistical analysis that you need to perform, you could write your own code to do the analysis yourself.
+Or we could use `aov` to run an (again, equivalent) analysis of variance (ANOVA).
 
+```{r, echo = TRUE}
+summary( aov(dat$wgt ~ dat$sex) );
+```
+
+Note that the p-value is identical in each of the above three cases because the underlying mathematics is the same. The point here is not to demonstrate all of the different statistics that can be performed within R. Because R is a programming language, the possibilities are limitless; in the unlikely chance that no one has written code for a particular statistical analysis that you need to perform, you could write your own code to do the analysis yourself.
+
+Practicing with the Bumpus data set, or your own
+================================================================================
+
+If you want to continue practicing working in R, then you can download the [Bumpus data set here](https://github.com/StirlingCodingClub/getting_started/find/master) (right click on 'Bumpus_data.csv' and select 'Save link as...') or [here](https://www.dropbox.com/s/8ytv36kbahhcpbs/Bumpus_data.csv?dl=0) (select 'Open with' in the upper right to download). Save the file somewhere on your computer, then make sure that you set R to the same working directory as the saved file by going to the toolbar of Rstudio and selecting 'Session > Set Working Directory > To Source File Location' (note, you could also do this from the R console using the `setwd` function). You should now be able to read these data into R and start doing some analyses. I have recreated the above analysis with the Bumpus data set [into an Rscript](https://github.com/StirlingCodingClub/getting_started/blob/master/Rcode.R). You can download it [here](https://github.com/StirlingCodingClub/getting_started/blob/master/Rcode.R), or recreate it yourself by copying and pasting the code from [the appendix below](#appendix) into a new Rscript.
 
 
 Appendix: R script file {#appendix}
 ================================================================================
 
 ```{r, eval = FALSE}
-# Here is your first R script. 
+# First we need to read in the Bumpus data below
+# Make sure that R is set to the same working directory as Bumpus_data.csv
+# Also make sure that the filenames match exact (including capitalisation)
+dat <- read.csv(file = "Bumpus_data.csv", header = TRUE);
+# So now the whole data table is saved as the variable 'dat'
+# You can save it as something different if you want, but avoid spaces
+
+# Let's take a look at the first six rows of the data
+head(x = dat); # Note that the 'x = ' is not necessary. 'head(dat)' works fine
+
+# How many rows and columns are in the data?
+dim(x = dat);
+
+dat[4, 6]; # First row, second column?
+
+# The below produces a histogram of sparrow mass
+# Note that I break the line below mid-function after specifying 'ylab'. This
+# isn't required, but it often makes code more readable to break to a new line
+# when the line exceeds 80 characters.
+hist(x = dat$wgt, main = "", xlab = "Sparrow weight (g)", ylab = "Frequency",
+     cex.lab = 1.25, cex.axis = 1.25, col = "grey");
+
+# Let's get a summary of just the sparrow mass
+summary(object = dat$wgt);
+
+# Now let's plot sparrow totel length against sparrow mass
+plot(x = dat$wgt, y = dat$totlen, xlab = "Sparrow body mass (g)", 
+     ylab = "Sparrow body length (mm)", cex.lab = 1.25, cex.axis = 1.25,
+     pch = 20); # Note: cex.lab, cex.axis, and pch are purely cosmetic
+
+# Test the correlatoin between total length and mass
+cor.test(x = dat$wgt, y = dat$totlen);
+
+# Make a linear model of total length regressed against body mass
+our_model <- lm(formula = dat$totlen ~ dat$wgt);
+
+# Now summarise 'our_model' that we saved above
+summary(object = our_model);
+
+# Now test if bird mass differs by sex using a t-test
+t.test(formula = dat$wgt ~ dat$sex, var.equal = TRUE);
+
+# We could also do a linear model get the same results
+our_lm <- lm(formula = dat$wgt ~ dat$sex)
+summary(object = our_lm);
+
+# And we can do the same with an ANOVA
+our_aov <- aov(dat$wgt ~ dat$sex)
+summary(our_aov);
 ```
 
---------------------------------------------------------------------------------
 
 References
 ================================================================================
