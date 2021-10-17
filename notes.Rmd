@@ -2,7 +2,7 @@
 title: "Introduction to coding"
 author: "Brad Duthie"
 subtitle: "HTML Version: https://stirlingcodingclub.github.io/getting_started/notes.html"
-date: "26 FEB 2020"
+date: "18 OCT 2021"
 output:
   pdf_document: default
   html_document: default
@@ -14,7 +14,7 @@ bibliography: refs.bib
 The purpose of this introduction
 ================================================================================
 
-The purpose here is to get readers past the initial learning curve of coding as quickly as possible. If you want to start coding for yourself, particuarly in R for data analysis, but are not sure how, then read on. By the end of these notes, you should be able to navigate through the basic graphical user interface of Rstudio and write some basic lines of code. The goal is not to develop proficiency in coding or R yet, but to help you get to the point at which it is possible to write and run code, make coding mistakes, and learn from other researcher's code.
+The purpose here is to get readers past the initial learning curve of coding as quickly as possible. If you want to start coding for yourself, particularly in R for data analysis, but are not sure how, then read on. By the end of these notes, you should be able to navigate through the basic graphical user interface of Rstudio and write some basic lines of code. The goal is not to develop proficiency in coding or R yet, but to help you get to the point at which it is possible to write and run code, make coding mistakes, and learn from other researcher's code.
 
 Why use the R programming language?
 ================================================================================
@@ -30,7 +30,9 @@ Instead, R allows researchers to write new tools for data analysis using simple 
 Getting started in R, and the basics
 ================================================================================
 
-**Installation.** The first thing to do is [download Rstudio](https://www.rstudio.com/) if you have not already. Note that R and Rstudio are not the same thing; R is a language for scientific computing, and can be used outside of Rstudio. Rstudio is a very useful tool for coding in the R language. As a very loose analogy, R is like a written language (e.g., English, Spanish) that can be used to write inside Rstudio (e.g., a word processor such as Microsoft Word, LibreOffice). But by downloading Rstudio, you will also download the R programming language. Look carefully at the version of Rstudio that you download; [different installers](https://rstudio.com/products/rstudio/download/#download) exist for Windows, Mac, and Linux. The most recent version of Rstudio requires a [64-bit](https://en.wikipedia.org/wiki/64-bit_computing) operating system. Unless your computer is quite old (say, over seven years), you most likely have a 64-bit operating system rather than a [32-bit](https://en.wikipedia.org/wiki/32-bit) operating system, but if you are uncertain, then it is best to check.
+**Installation.** The first thing to do is [download Rstudio](https://www.rstudio.com/) if you have not already (but see below if you're eager to get started and want to skip this step). Note that R and Rstudio are not the same thing; R is a language for scientific computing, and can be used outside of Rstudio. Rstudio is a very useful tool for coding in the R language. As a very loose analogy, R is like a written language (e.g., English, Spanish) that can be used to write inside Rstudio (e.g., a word processor such as Microsoft Word, LibreOffice). Look carefully at the version of Rstudio that you download; [different installers](https://rstudio.com/products/rstudio/download/#download) exist for Windows, Mac, and Linux. The most recent version of Rstudio requires a [64-bit](https://en.wikipedia.org/wiki/64-bit_computing) operating system. Unless your computer is quite old (say, over seven years), you most likely have a 64-bit operating system rather than a [32-bit](https://en.wikipedia.org/wiki/32-bit) operating system, but if you are uncertain, then it is best to check.
+
+**Bypassing installation with Rstudio Cloud.** If you do not want to install R or Rstudio, or are having trouble doing so but want to get started in R quickly, then an alternative is to use R through the [Rstudio cloud](https://rstudio.cloud) ([https://rstudio.cloud](https://rstudio.cloud)). The Rstudio cloud allows you to run R right from your browser, and you can sign up for free. You can watch this [five minute video](https://www.dropbox.com/s/68pd0v48jp21bob/introduction_to_Rstudio_Cloud.mp4?dl=0) to see how to sign up and get started.
 
 **Running Rstudio.** When you first run Rstudio, you will see several windows open. It will look something like the below, except probably with a standard black on white theme (if you want, you can change this by selecting from the toolbar 'Tools > Global Options...', then selecting the 'Appearance' tab on the left).
 
@@ -223,7 +225,7 @@ If you do not want to go through all of the code line by line, you could instead
 Reading in data
 ================================================================================
 
-Now we need to read in the Bumpus data. This is actually a challenging part because the data needs to be in a correct format and location to be read into R successfully. The format is best read in as a CSV file, though other formats are also possible (TXT can work, or XLSX if you download and load the `openxlsx` R package and use the `read.xlsx` function). For now, I will use a CSV file with the [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows). Reading CSV files into R can be challenging at first, and I encourage you to first read in the example data set, then try reading in your own data sets into R. You can read your own dat sets into R by saving them as CSV files in Excel; as a general rule, it is good to avoid spaces in these files (replacing them, e.g., with an underscore '_'). Also make sure that all rows and columns are filled in; any empty values can be replaced with an `NA`, which R reads as unavailable data. See the [Bumpus CSV file](https://github.com/StirlingCodingClub/getting_started/blob/master/Bumpus_data.csv) online to get an idea of what a data file looks like.
+Now we need to read in the Bumpus data. This is actually a challenging part because the data need to be in a correct format and location to be read into R successfully. The format is best read in as a CSV file, though other formats are also possible (TXT can work, or XLSX if you download and load the `openxlsx` R package and use the `read.xlsx` function). For now, I will use a CSV file with the [Bumpus data set](https://www.fieldmuseum.org/blog/hermon-bumpus-and-house-sparrows). Reading CSV files into R can be challenging at first, and I encourage you to first read in the example data set, then try reading in your own data sets into R. You can read your own dat sets into R by saving them as CSV files in Excel; as a general rule, it is good to avoid spaces in these files (replacing them, e.g., with an underscore '_'). Also make sure that all rows and columns are filled in; any empty values can be replaced with an `NA`, which R reads as unavailable data. See the [Bumpus CSV file](https://github.com/StirlingCodingClub/getting_started/blob/master/Bumpus_data.csv) online to get an idea of what a data file looks like.
 
 Two common errors arise at this point, which can be sources of frustration for getting started. First, the data might not be organised correctly for reading into R. Note that rows and columns should start in row '1' and column 'A' of Excel (i.e., don't leave empty rows and columns), and additional cells should not be used outside of rows and columns (if, e.g., you have a value in cell M4, when the last column in your table is K, then R will intepret this as column L being full of empty values). You should be fine if R includes some number of completely filled in rows and columns, with nothing filled in outside. If you want to, you can download the [Bumpus CSV file](https://www.dropbox.com/s/8ytv36kbahhcpbs/Bumpus_data.csv?dl=0) from Dropbox and open it up in Excel for an example of what a good CSV file looks like. Note that there are no empty cells inside the table, and no values outside the table. This should therefore be read easily into R.
 
@@ -260,7 +262,7 @@ We could also just use the function `dim` to get the dimensions of `dat` (note t
 dim(dat);
 ```
 
-So we know that our table `dat`, which contains the Bumpus data, includes `r dim(dat)[1]` rows and `r dim(dat)[2]` columns. Having read this table into R successfully, we can now perform any number of statistical analyses on the contents. The different ways to analyse theses data are beyond the scope of these notes, but there are a few useful things to know. First, the row and columns in `dat` can be indext using square brackets. If, for example, we wanted to just look at the value of the fourth row and sixth column, we could type the following.
+So we know that our table `dat`, which contains the Bumpus data, includes `r dim(dat)[1]` rows and `r dim(dat)[2]` columns. Having read this table into R successfully, we can now perform any number of statistical analyses on the contents. The different ways to analyse theses data are beyond the scope of these notes, but there are a few useful things to know. First, the row and columns in `dat` can be indexed using square brackets. If, for example, we wanted to just look at the value of the fourth row and sixth column, we could type the following.
 
 ```{r, echo = TRUE}
 dat[4, 6]; # First row, second column
@@ -272,7 +274,7 @@ The first position within the brackets is the row (`4`), and the second position
 dat_point_1 <- dat[4, 6];
 ```
 
-We could then use `dat_point_1` in place of dat[, 6]. We can also define entire rows or columns. For example, if we wanted to return all of the values of row 4, then we could leaven the second index blank, as below.
+We could then use `dat_point_1` in place of `dat[4, 6]`. We can also define entire rows or columns. For example, if we wanted to return all of the values of row 4, then we could leaven the second index blank, as below.
 
 ```{r, echo = TRUE}
 dat[4, ]; # Note the empty space where a column was previously
