@@ -2,7 +2,7 @@
 title: "Getting started with coding and R"
 author: "Stirling Coding Club"
 subtitle: stirlingcodingclub.github.io/getting_started/slides.pdf
-date: "26 February 2020"
+date: "20 October 2021"
 output:
   beamer_presentation:
     theme: "default"
@@ -17,24 +17,54 @@ linkcolor: blue
 urlcolor: blue
 ---
 
+# Stirling Coding Club
 
-# Do I need to learn how to code?
+\LARGE 
 
-![](figures/learn_to_code.png){width=220px} ![](figures/dont_learn_to_code.png){width=220px}
 
-\footnotetext[1]{Dreyfuss (2017). Wired. \href{https://www.wired.com/2017/03/biologists-teaching-code-survive/}{https://www.wired.com/2017/03/biologists-teaching-code-survive/}.}
-\footnotetext[2]{Mike (2019). \href{https://mikethemadbiologist.com/2019/12/06/biologists-should-not-learn-how-to-code/}{https://mikethemadbiologist.com/2019/12/06/biologists-should-not-learn-how-to-code/}.}
 
-# Do I need to learn how to code?
+*Stirling Coding Club exists for fun, informal meet-ups of friends and colleagues to share skills, stories, and ideas on using code, and exploring open research practices. Our goal is to create a friendly, no-pressure environment where people can share their work, ask for help on a coding problem, and learn and work together.*
 
-\begin{table}[]
-\begin{tabular}{p{5.5cm}|p{5cm}|}
-Not only is coding a core skill that gets the basic work of biology done, it's also taught [biologists] to look at problems in new ways. Above all, they agree, \textbf{coding liberated them}. As tools evolve to allow biologists to gather ever-more-massive quantities of data, people [...] will find a way to make coding a core part of scientific education$^1$. &  [T]here's nothing wrong with becoming an expert (or close to one) in a given skill set (e.g., statistics, coding), and \textbf{it also will be a good thing as a biologist}. But I don’t think coding will be the must-have skill set a few years from now (except for those who develop new tools)$^2$.
-\end{tabular}
-\end{table}
 
-\footnotetext[1]{Dreyfuss (2017). Wired. \href{https://www.wired.com/2017/03/biologists-teaching-code-survive/}{https://www.wired.com/2017/03/biologists-teaching-code-survive/}.}
-\footnotetext[2]{Mike (2019). \href{https://mikethemadbiologist.com/2019/12/06/biologists-should-not-learn-how-to-code/}{https://mikethemadbiologist.com/2019/12/06/biologists-should-not-learn-how-to-code/}.}
+# Stirling Coding Club
+
+\LARGE 
+
+*"Coding Club is for everyone, regardless of their career stage or current level of knowledge. Coding Club is a place that brings people together, regardless of their gender or background. We all have the right to learn, and we believe learning is more fun and efficient when we help each other along the way."* -- [Edinburgh Coding Club](https://ourcodingclub.github.io/)
+
+
+# Stirling Coding Club
+
+\LARGE
+
+- Alternates weeks with Stats Discussion Group \pause
+- Detailed notes posted on Monday \pause
+- Meeting on Wednesday, then try notes with live help or walk-through \pause
+- Questions on MS Teams chat afterwards \pause
+- Participate as much or as little as you prefer!
+
+
+# Stirling Coding Club in 2021-2022
+
+1. Getting started in R (20 OCT 2021)
+2. General computing concepts (03 NOV 2021)
+3. Writing and using functions (17 NOV 2021)
+4. Writing and using loops (01 DEC 2021)
+5. Simulating data in R (12 JAN 2022)
+6. Introduction to version control (26 JAN 2022)
+7. Slides in Rmarkdown (09 FEB 2022)
+8. Manuscripts in Rmarkdown (23 FEB 2022)
+9. Rshiny applications (09 MAR 2022)
+10. Randomisation in R (23 MAR 2022)
+11. Writing tests for code (06 APR 2022)
+12. Individual-based modelling (20 APR 2022)
+13. Creating R packages (04 MAY 2022)
+
+\vspace{4mm}
+
+\hrule
+
+[https://stirlingcodingclub.github.io/studyGroup/](https://stirlingcodingclub.github.io/studyGroup/)
 
 # Do I need to learn how to code?
 
@@ -86,7 +116,6 @@ Practical advantages of learning and using R
 \item Thousands \href{https://cran.r-project.org/web/packages/available_packages_by_date.html}{R packages} for specific data needs \pause
 \item Standard programming language for statistics \pause
 \item Write \href{https://stirlingcodingclub.github.io/Manuscripts_in_Rmarkdown/Rmarkdown_notes.html}{papers}, \href{https://stirlingcodingclub.github.io/Manuscripts_in_Rmarkdown/presentation.pdf}{slides}, and \href{https://bradduthie.shinyapps.io/gmse_gui/}{apps} in Rmarkdown \pause
-\item Get a job \pause
 \item \textbf{Write your own solutions to data management problems}
 \item \textbf{Write your own statistical analyses}
 \item \textbf{Create your own plots} \pause
@@ -195,7 +224,6 @@ Custom built plot [with R code](https://github.com/bradduthie/PolyInbreed/blob/m
 \setlength\itemsep{0em}
 \item You do not need to know everything
 \item Help is available from many places
-\item It might eventually become fun
 \end{itemize}
 
 \vspace{3mm}
@@ -207,5 +235,9 @@ include_graphics("figures/SCC_Logo_slide_sm.png")
 \vspace{3mm}
 
 https://stirlingcodingclub.github.io/getting_started/notes.html
+
+https://ourcodingclub.github.io/tutorials/intro-to-r/
+
+https://ourcodingclub.github.io/tutorials/troubleshooting/
 
 
