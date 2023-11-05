@@ -2,7 +2,7 @@
 title: "Introduction to coding"
 author: "Brad Duthie"
 subtitle: "HTML Version: https://stirlingcodingclub.github.io/coding_types/notes.html"
-date: "19 OCT 2022"
+date: "08 NOV 2023"
 output:
   pdf_document: default
   html_document: default
