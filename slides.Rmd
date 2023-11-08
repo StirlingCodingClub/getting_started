@@ -2,14 +2,14 @@
 title: "Getting started with coding and R"
 author: "Stirling Coding Club"
 subtitle: stirlingcodingclub.github.io/getting_started/slides.pdf
-date: "19 October 2022"
+date: "08 November 2023"
 output:
+  slidy_presentation: default
+  ioslides_presentation: default
   beamer_presentation:
     theme: "default"
     colortheme: "default"
     fonttheme: "default"
-  ioslides_presentation: default
-  slidy_presentation: default
 header-includes:
 - \usepackage{hyperref}
 colorlinks: true
@@ -38,19 +38,19 @@ urlcolor: blue
 
 # Stirling Coding Club in 2022-2023
 
-1. Getting started in R (19 OCT 2022)
-2. General computing concepts (02 NOV 2022)
-3. Writing and using functions (16 NOV 2022)
-4. Writing and using loops (30 NOV 2022)
-5. Simulating data in R (14 DEC 2022)
-6. Introduction to version control (11 JAN 2023)
-7. Slides in Rmarkdown (25 JAN 2023)
-8. Manuscripts in Rmarkdown (08 FEB 2023)
-9. Rshiny applications (22 FEB 2023)
-10. Randomisation in R (08 MAR 2023)
-11. Writing tests for code (22 MAR 2023)
-12. Individual-based modelling (05 APR 2023)
-13. Creating R packages (19 APR 2023)
+1. Getting started in R (08 NOV 2023)
+2. General computing concepts (22 NOV 2023)
+3. Writing and using functions (06 DEC 2023)
+4. Writing and using loops (17 JAN 2024)
+5. Simulating data in R (31 JAN 2024)
+6. Introduction to version control (14 FEB 2024)
+7. Slides in Rmarkdown (28 FEB 2024)
+8. Manuscripts in Rmarkdown (13 MAR 2024)
+9. Rshiny applications (27 MAR 2024)
+10. Randomisation in R (10 APR 2024)
+11. Writing tests for code (24 APR 2024)
+12. Individual-based modelling (08 MAY 2024)
+13. Creating R packages (22 MAY 2023)
 
 \vspace{4mm}
 
@@ -59,6 +59,12 @@ urlcolor: blue
 [https://stirlingcodingclub.github.io/studyGroup/](https://stirlingcodingclub.github.io/studyGroup/)
 
 # Do I need to learn how to code?
+
+\Large
+
+\textbf{Is this a necessary skill in the sciences?} \pause
+
+\normalsize
 
 \begin{table}[]
 \begin{tabular}{p{5.5cm}|p{5cm}|}
@@ -83,16 +89,10 @@ Most scientific research relies on numeric data.
 
 Software exists that can do the above without code.
 \begin{itemize}
-\setlength\itemsep{-0.2em}
-\item \href{www.jmp.com}{JMP}
-\item \href{https://www.minitab.com/en-us/products/minitab/?utm_campaign=BFO+-+US+-+EN&utm_medium=ppc&utm_term=minitab&utm_source=adwords&hsa_net=adwords&hsa_mt=e&hsa_ver=3&hsa_grp=75045421894&hsa_ad=381051763423&hsa_tgt=kwd-298703240867&hsa_cam=2063260456&hsa_acc=4841564033&hsa_src=g&hsa_kw=minitab&gclid=Cj0KCQiAqNPyBRCjARIsAKA-WFzHJH4aiDsh90CMsg3rYeLEQGeeYBSDui1ZNZjBU2624YCsei5yhnEaAu7lEALw_wcB}{Minitab}
-\item \href{https://systatsoftware.com/}{Systat}
-\item \href{https://products.office.com/en/excel}{MSExcel}
-\item \href{https://www.ibm.com/uk-en/products/spss-statistics}{SPSS}
-\item \href{https://www.jamovi.org/}{Jamovi}
+\item \href{www.jmp.com}{JMP}, \href{https://www.minitab.com/en-us/products/minitab/?utm_campaign=BFO+-+US+-+EN&utm_medium=ppc&utm_term=minitab&utm_source=adwords&hsa_net=adwords&hsa_mt=e&hsa_ver=3&hsa_grp=75045421894&hsa_ad=381051763423&hsa_tgt=kwd-298703240867&hsa_cam=2063260456&hsa_acc=4841564033&hsa_src=g&hsa_kw=minitab&gclid=Cj0KCQiAqNPyBRCjARIsAKA-WFzHJH4aiDsh90CMsg3rYeLEQGeeYBSDui1ZNZjBU2624YCsei5yhnEaAu7lEALw_wcB}{Minitab}, \href{https://systatsoftware.com/}{Systat}, \href{https://products.office.com/en/excel}{MSExcel}, \href{https://www.ibm.com/uk-en/products/spss-statistics}{SPSS}, \href{https://www.jamovi.org/}{Jamovi}
 \end{itemize}
 
-\vspace{2mm}\pause
+\vspace{5mm}\pause
 
 Practical advantages of using these software tools
 \begin{itemize}
