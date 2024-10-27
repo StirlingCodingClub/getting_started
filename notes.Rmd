@@ -1,11 +1,10 @@
 ---
 title: "Introduction to coding"
 author: "Brad Duthie"
-subtitle: "HTML Version: https://stirlingcodingclub.github.io/getting_started"
-date: "08 NOV 2023"
+date: "30 OCT 2023"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 link-citations: yes
 linkcolor: blue
 bibliography: refs.bib
