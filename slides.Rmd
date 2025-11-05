@@ -2,7 +2,7 @@
 title: "Getting started with coding and R"
 author: "Stirling Coding Club"
 subtitle: stirlingcodingclub.github.io/getting_started/slides.pdf
-date: "30 October 2024"
+date: "05 November 2025"
 output:
   beamer_presentation:
     theme: "default"
@@ -29,7 +29,6 @@ urlcolor: blue
 
 \LARGE
 
-- Alternates weeks with Stats Discussion Group \pause
 - Detailed notes posted on Monday \pause
 - Meeting on Wednesday, then try notes with live help or walk-through \pause
 - Questions on MS Teams chat afterwards \pause
@@ -38,18 +37,18 @@ urlcolor: blue
 
 # Stirling Coding Club in 2023-2024
 
-1. 30 OCT 2024: Getting started in R
-2. 13 NOV 2024: General computing concepts (and more R)
-3. 27 NOV 2024: Writing and using functions in R
-4. 22 JAN 2025: Writing and using loops in R
-5. 05 FEB 2025: Simulating data in R
-6. 19 FEB 2025: Writing slides in Rmarkdown
-7. 05 MAR 2025: Writing manuscripts in Rmarkdown
-8. 19 MAR 2025: Introduction to Rshiny apps
-9. 02 APR 2025: Randomisation approaches in R
-10. 16 APR 2025: Writing tests for code
-11. 30 APR 2025: Individual-based modelling in R
-12. 14 MAY 2025: Introduction to version control
+- 05 NOV 2025 14:00: Getting started in R (link)
+- 19 NOV 2025 11:00: General computing concepts (and more R)
+- 03 DEC 2025 14:00: Writing and using functions in R
+- 21 JAN 2026   TBD  Writing loops in R
+- 04 FEB 2026   TBD  Simulating data in R
+- 18 FEB 2026   TBD  Introduction to version control
+- 28 FEB 2026   TBD  Writing slides in Rmarkdown
+- 04 MAR 2026   TBD  Writing manuscripts in Rmarkdown
+- 18 MAR 2026   TBD  Introduction to Rshiny apps
+- 01 APR 2026   TBD  Randomisation approaches in R
+- 15 APR 2026   TBD  Writing tests for code
+- 29 APR 2026   TBD  Individual-based modelling
 
 \vspace{4mm}
 
@@ -227,7 +226,7 @@ include_graphics("figures/SCC_Logo_slide_sm.png")
 
 \vspace{3mm}
 
-https://stirlingcodingclub.github.io/getting_started/notes.html
+https://stirlingcodingclub.github.io/getting_started/
 
 https://ourcodingclub.github.io/tutorials/intro-to-r/
 
