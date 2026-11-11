@@ -2,7 +2,7 @@
 title: "Getting started with coding and R"
 author: "Stirling Coding Club"
 subtitle: stirlingcodingclub.github.io/getting_started/slides.pdf
-date: "05 November 2025"
+date: "11 November 2026"
 output:
   beamer_presentation:
     theme: "default"
